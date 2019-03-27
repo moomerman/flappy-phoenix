@@ -1,4 +1,0 @@
-<div class="flex flex-col">
-  <img src="<%= Routes.static_path(@conn, "/images/skyline.png") %>"/>
-  <img src="<%= Routes.static_path(@conn, "/images/ground.png") %>"/>
-</div>

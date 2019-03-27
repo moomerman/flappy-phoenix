@@ -42,6 +42,7 @@ defmodule FlappyPhoenixWeb do
       import FlappyPhoenixWeb.ErrorHelpers
       import FlappyPhoenixWeb.Gettext
       import FlappyPhoenixWeb.ViewHelpers
+      import Phoenix.LiveView, only: [live_render: 2, live_render: 3]
       alias FlappyPhoenixWeb.Router.Helpers, as: Routes
     end
   end
@@ -51,6 +52,7 @@ defmodule FlappyPhoenixWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
