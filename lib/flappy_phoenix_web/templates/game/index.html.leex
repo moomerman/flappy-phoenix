@@ -1,4 +1,19 @@
-<div id="game" class="flex flex-col">
-  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/skyline.png") %>"/>
-  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/ground.png") %>"/>
+<div id="game" class="h-screen w-screen" phx-keydown="keydown" phx-target="window" style="background-image:url('<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/skyline.png") %>'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <header class="flex items-center justify-between text-white px-4 py-2 antialiased relative z-10">
+    <div class="flex items-center opacity-75">
+      <%= svg :phoenix, class: "h-8 mr-2 fill-current" %>
+      <h1 class="text-xl font-normal">Flappy Phoenix</h1>
+    </div>
+    <div style="font-variant-numeric: tabular-nums;">
+      <span class="font-bold pr-4">Score:</span> <%= format_score(@game.score) %> <%= @game.bird.position %>
+    </div>
+  </header>
+  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/bird_#{@game.bird.wings}.png") %>" class="absolute pin-l ml-12" style="top:<%= @game.bird.position %>%; transform: rotate(<%= if @game.bird.flap, do: -25, else: 25 %>deg);"/>
+  <div class="w-12 sm:w-24 absolute pin-t" style="right:0%">
+    <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_down.png") %>" />
+  </div>
+  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_up.png") %>" class="absolute" style="bottom: 20%; right:20%"/>
+  <div class="w-screen md:h-48 absolute pin-b" style="height:20%; background-image:url('<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/ground.png") %>'); background-position: center; background-repeat: repeat;">
+    &nbsp;
+  </div>
 </div>
