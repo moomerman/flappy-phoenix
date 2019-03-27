@@ -41,6 +41,7 @@ defmodule FlappyPhoenixWeb do
 
       import FlappyPhoenixWeb.ErrorHelpers
       import FlappyPhoenixWeb.Gettext
+      import FlappyPhoenixWeb.ViewHelpers
       alias FlappyPhoenixWeb.Router.Helpers, as: Routes
     end
   end

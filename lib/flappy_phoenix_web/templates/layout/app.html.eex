@@ -4,23 +4,15 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>FlappyPhoenix · Phoenix Framework</title>
+    <title>Flappy Phoenix · Phoenix Framework</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-          </ul>
-        </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
+  <body class="bg-grey-lighter font-sans">
+    <header class="flex items-center bg-orange-dark text-white px-4 md:px-24 py-2 antialiased">
+      <%= svg :phoenix, class: "h-8 mr-4 fill-current" %>
+      <h1 class="text-xl">Flappy Phoenix</h1>
     </header>
-    <main role="main" class="container">
+    <main class="md:max-w-sm md:mx-auto md:mt-4">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
