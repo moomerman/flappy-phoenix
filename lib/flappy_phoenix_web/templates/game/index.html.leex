@@ -8,11 +8,15 @@
       <span class="font-bold pr-4">Score:</span> <%= format_score(@game.score) %> <%= @game.bird.position %>
     </div>
   </header>
-  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/bird_#{@game.bird.wings}.png") %>" class="absolute pin-l ml-12" style="top:<%= @game.bird.position %>%; transform: rotate(<%= if @game.bird.flap, do: -25, else: 25 %>deg);"/>
-  <div class="w-12 sm:w-24 absolute pin-t" style="right:0%">
+  <div class="w-12 sm:w-16 md:w-20 lg:24 absolute pin-l ml-12" style="top:<%= @game.bird.position %>%; transform: rotate(<%= if @game.bird.flap, do: -25, else: 25 %>deg);">
+    <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/bird_#{@game.bird.wings}.png") %>"/>
+  </div>
+  <div class="w-12 sm:w-16 md:w-20 lg:24 absolute" style="top:0%; right:0%">
     <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_down.png") %>" />
   </div>
-  <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_up.png") %>" class="absolute" style="bottom: 20%; right:20%"/>
+  <div class="w-12 sm:w-16 md:w-20 lg:24 absolute" style="bottom: 20%; right:20%">
+    <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_up.png") %>"/>
+  </div>
   <div class="w-screen md:h-48 absolute pin-b" style="height:20%; background-image:url('<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/ground.png") %>'); background-position: center; background-repeat: repeat;">
     &nbsp;
   </div>

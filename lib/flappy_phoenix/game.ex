@@ -10,20 +10,24 @@ defmodule FlappyPhoenix.Game do
     }
   end
 
-  def advance(game) do
-    bird = %{game.bird | position: min(game.bird.position + 4, 75)}
+  def advance(%{state: :ok} = game) do
+    bird = %{game.bird | position: min(game.bird.position + 4, 76)}
     bird = %{bird | wings: rem(bird.wings + 1, 3), flap: false}
     %{game | score: game.score + 0.1, bird: bird, state: state(game)}
   end
 
-  def flap(game) do
+  def advance(game), do: game
+
+  def flap(%{state: :ok} = game) do
     bird = %{game.bird | position: max(game.bird.position - 12, 0), flap: true}
     %{game | bird: bird}
   end
 
+  def flap(game), do: game
+
   defp state(game) do
     case game.bird.position do
-      x when x > 74 -> :end
+      x when x > 75 -> :end
       x when x < 1 -> :end
       _ -> :ok
     end
