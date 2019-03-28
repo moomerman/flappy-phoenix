@@ -22,7 +22,7 @@ defmodule FlappyPhoenixWeb.GameLive do
   end
 
   def handle_info(:tick, socket) do
-    game = Game.advance(socket.assigns.game)
+    game = Game.update(socket.assigns.game)
 
     case game.state do
       :ok ->
