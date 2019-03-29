@@ -1,7 +1,6 @@
 <div id="game">
-
   <div class="max-w-md mx-auto text-center text-grey-lighter antialiased flex flex-col">
-    <div class="flex items-center justify-center mt-24 mb-6">
+    <div class="flex items-center justify-center mt-12 md:mt-24 mb-3">
       <%= svg :phoenix, class: "h-12 w-12 mr-2 fill-current" %>
       <h1 class="text-3xl">Flappy Phoenix</h1>
     </div>
@@ -11,7 +10,7 @@
     </div>
   </div>
 
-  <div class="absolute pin-b pin-r pin-l h-12 p-4 mb-12 text-center text-blue-dark flex flex-col">
+  <div class="absolute pin-b pin-r pin-l h-12 p-4 mb-16 text-center text-blue-dark flex flex-col">
     <div class="mb-1">Made by <a href="https://richardtaylor.dev" class="text-blue-dark mb-2">Richard Taylor</a></div>
     <div>Code available on <a href="https://github.com/moomerman/flappy-phoenix" class="text-blue-dark">GitHub</a></div>
   </div>
