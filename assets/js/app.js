@@ -17,6 +17,11 @@ import "phoenix_html"
 // import socket from "./socket"
 
 import LiveSocket from "phoenix_live_view"
-
 let liveSocket = new LiveSocket("/live")
 liveSocket.connect()
+
+document.addEventListener("touchstart", flap, true);
+document.addEventListener("click", flap, true);
+function flap() {
+  window.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'f' }));
+}

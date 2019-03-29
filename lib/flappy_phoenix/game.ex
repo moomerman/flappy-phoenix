@@ -39,7 +39,7 @@ defmodule FlappyPhoenix.Game do
       game.bird
       |> Map.put(:wings, rem(game.bird.wings + 1, 4))
       |> Map.put(:velocity, game.bird.velocity - @gravity)
-      |> Map.put(:y, min(game.bird.y - 1.5 * game.bird.velocity, 76))
+      |> Map.put(:y, min(game.bird.y - 1.5 * game.bird.velocity, 81))
 
     %{game | bird: bird}
   end
@@ -61,7 +61,7 @@ defmodule FlappyPhoenix.Game do
   defp check_y_collisions(game) do
     state =
       case game.bird.y do
-        y when y > 75 -> :end
+        y when y > 80 -> :end
         y when y < 1 -> :end
         _ -> :ok
       end
