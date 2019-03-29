@@ -29,8 +29,8 @@
 
 #bird {
   position: absolute;
-  width: 3vh;
-  height: 4.25vh;
+  width: 4.25vh;
+  height: 3vh;
   z-index: 40;
 }
 
