@@ -14,16 +14,13 @@
   </div>
 
   <%= for pipe <- @game.pipes do %>
-    <div class="pipe" style="top:0; left:<%= pipe.x %>vw">
-      <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_down.png") %>" />
-    </div>
-    <div class="pipe" style="bottom:0; left:<%= pipe.x %>vw">
-      <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_up.png") %>"/>
+    <div class="pipe" style="left:<%= pipe.x %>vw; top:<%= pipe.y %>vh;">
+      <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_#{pipe.dir}.png") %>"/>
     </div>
   <% end %>
 
   <div id="ground">
-    <div class=""><%= inspect Map.take(@game, [:bird, :pipes, :state, :fps]) %></div>
+    <div class="pt-24 pl-4"><%= inspect Map.take(@game, [:bird, :pipes, :state, :fps]) %></div>
     &nbsp;
   </div>
 

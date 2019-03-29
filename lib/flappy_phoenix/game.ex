@@ -8,7 +8,10 @@ defmodule FlappyPhoenix.Game do
     %Game{
       state: :ok,
       bird: %{x: 10, y: 35, wings: 0, velocity: 0},
-      pipes: [%{x: 100}],
+      pipes: [
+        %{x: 100, y: -10, height: 45, dir: :down},
+        %{x: 100, y: 50, height: 45, dir: :up}
+      ],
       score: 0.0,
       updated: System.monotonic_time() - @tick
     }
@@ -49,13 +52,13 @@ defmodule FlappyPhoenix.Game do
   end
 
   defp move_pipe(pipe) do
-    %{x: pipe.x - 2}
+    %{pipe | x: pipe.x - 2}
   end
 
   defp check_for_collisions(game) do
     game
     |> check_y_collisions
-    |> check_x_collisions
+    |> check_pipe_collisions
   end
 
   defp check_y_collisions(game) do
@@ -69,9 +72,12 @@ defmodule FlappyPhoenix.Game do
     %{game | state: state}
   end
 
-  defp check_x_collisions(%{state: :ok} = game) do
+  defp check_pipe_collisions(%{state: :ok} = game) do
     state =
-      case Enum.find(game.pipes, fn p -> game.bird.x >= p.x - 4 && game.bird.x <= p.x + 1 end) do
+      case Enum.find(game.pipes, fn p ->
+             game.bird.x >= p.x - 3.2 && game.bird.x <= p.x + 1 &&
+               (game.bird.y >= p.y and game.bird.y <= p.y + p.height)
+           end) do
         nil -> :ok
         _ -> :end
       end
@@ -79,5 +85,5 @@ defmodule FlappyPhoenix.Game do
     %{game | state: state}
   end
 
-  defp check_x_collisions(game), do: game
+  defp check_pipe_collisions(game), do: game
 end
