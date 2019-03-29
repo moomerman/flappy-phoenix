@@ -1,4 +1,4 @@
-<div id="game" class="h-screen w-screen" phx-keydown="keydown" phx-target="window" style="background-image:url('<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/skyline.png") %>'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+<div id="game" phx-keydown="keydown" phx-target="window">
   <header class="flex items-center justify-between text-white px-4 py-2 antialiased relative z-50">
     <div class="flex items-center opacity-75">
       <%= svg :phoenix, class: "h-8 mr-2 fill-current" %>
@@ -8,21 +8,21 @@
       <span class="font-bold pr-2">Score:</span> <%= format_score(@game.score) %>
     </div>
   </header>
-  <div class="w-12 sm:w-16 md:w-20 lg:24 absolute pin-l z-40" style="left: <%= @game.bird.x %>%; top:<%= @game.bird.y %>%; transform: rotate(<%= if @game.bird.velocity > 0, do: -25, else: 25 %>deg);">
+  <div class="relative pin-l z-40" style="width:3rem; height:4.25rem; left:<%= @game.bird.x %>%; top:<%= @game.bird.y %>%; transform: rotate(<%= if @game.bird.velocity > 0, do: -25, else: 25 %>deg);">
     <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/bird_#{@game.bird.wings}.png") %>"/>
   </div>
 
   <%= for pipe <- @game.pipes do %>
-    <div class="w-12 sm:w-16 md:w-20 lg:24 absolute" style="top:0%; right:<%= pipe.x %>%">
+    <div class="relative" style="width:4%; height:2%; top:0; left:<%= pipe.x %>%">
       <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_down.png") %>" />
     </div>
-    <div class="w-12 sm:w-16 md:w-20 lg:24 absolute" style="bottom: 20%; right:<%= pipe.x %>%">
+    <div class="relative" style="width:40rem; height:6.5rem; bottom:0rem; left:<%= pipe.x %>%">
       <img src="<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/pipe_up.png") %>"/>
     </div>
   <% end %>
 
-  <div class="w-screen md:h-48 absolute pin-b" style="height:20%; background-image:url('<%= Routes.static_path(FlappyPhoenixWeb.Endpoint, "/images/ground.png") %>'); background-position: center; background-repeat: repeat;">
-    <div class="mt-12"><%= inspect Map.take(@game, [:bird, :pipes, :state, :fps]) %></div>
+  <div id="ground">
+    <div class=""><%= inspect Map.take(@game, [:bird, :pipes, :state, :fps]) %></div>
     &nbsp;
   </div>
 

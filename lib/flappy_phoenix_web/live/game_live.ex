@@ -17,7 +17,7 @@ defmodule FlappyPhoenixWeb.GameLive do
   end
 
   defp schedule_tick(socket) do
-    Process.send_after(self(), :tick, 100)
+    Process.send_after(self(), :tick, 50)
     socket
   end
 
