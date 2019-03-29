@@ -15,6 +15,8 @@ config :flappy_phoenix, FlappyPhoenixWeb.Endpoint,
   pubsub: [name: FlappyPhoenix.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "SECRET_SALT"]
 
+config :my_app, FlappyPhoenixWeb.Endpoint, instrumenters: [Appsignal.Phoenix.Instrumenter]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -24,7 +26,9 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :phoenix,
-  template_engines: [leex: Phoenix.LiveView.Engine]
+  template_engines: [leex: Phoenix.LiveView.Engine],
+  eex: Appsignal.Phoenix.Template.EExEngine,
+  exs: Appsignal.Phoenix.Template.ExsEngine
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

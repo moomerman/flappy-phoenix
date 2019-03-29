@@ -1,5 +1,6 @@
 defmodule FlappyPhoenixWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :flappy_phoenix
+  use Appsignal.Phoenix
 
   socket "/socket", FlappyPhoenixWeb.UserSocket,
     websocket: [timeout: 45_000],
