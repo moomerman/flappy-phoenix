@@ -59,7 +59,7 @@ defmodule FlappyPhoenix.Game do
       nil ->
         pipes = [
           %{x: 100, y: Enum.random(-30..0), height: 45, dir: :down},
-          %{x: 100, y: Enum.random(30..80), height: 45, dir: :up}
+          %{x: 100, y: Enum.random(40..80), height: 45, dir: :up}
         ]
 
         %{game | pipes: game.pipes ++ pipes}
