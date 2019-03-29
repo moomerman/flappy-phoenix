@@ -15,7 +15,7 @@ config :flappy_phoenix, FlappyPhoenixWeb.Endpoint,
   pubsub: [name: FlappyPhoenix.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "SECRET_SALT"]
 
-config :my_app, FlappyPhoenixWeb.Endpoint, instrumenters: [Appsignal.Phoenix.Instrumenter]
+config :flappy_phoenix, FlappyPhoenixWeb.Endpoint, instrumenters: [Appsignal.Phoenix.Instrumenter]
 
 # Configures Elixir's Logger
 config :logger, :console,

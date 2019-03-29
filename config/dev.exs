@@ -53,7 +53,7 @@ config :flappy_phoenix, FlappyPhoenixWeb.Endpoint,
       ~r{priv/gettext/.*(po)$},
       ~r{lib/flappy_phoenix_web/views/.*(ex)$},
       ~r{lib/flappy_phoenix_web/templates/.*(eex)$},
-      ~r{lib/my_app_web/live/.*(ex)$}
+      ~r{lib/flappy_phoenix_web/live/.*(ex)$}
     ]
   ]
 
