@@ -52,13 +52,14 @@ module.exports = (env, options) => {
     config.plugins.push(
       new PurgecssPlugin({
         paths: glob.sync([
-          path.join(__dirname, '../lib/flappy_phoenix_web/templates/**/*.eex'),
+          path.join(__dirname, '../lib/flappy_phoenix_web/templates/**/*.*eex'),
+          path.join(__dirname, '../lib/flappy_phoenix_web/live/*.ex'),
           path.join(__dirname, '../lib/flappy_phoenix_web/views/*.ex'),
         ]),
         extractors: [
           {
             extractor: TailwindExtractor,
-            extensions: ["html", "js", "ex", "eex"],
+            extensions: ["html", "js", "ex", "eex", "leex"],
           }
         ]
       })
