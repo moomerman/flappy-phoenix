@@ -4,6 +4,8 @@ Flappy Pheonix is a Flappy Bird clone written in Elixir using
 [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view) to
 render the game UI from the server.
 
+ ![Screenshot](screenshot.png)
+
 Try the game on [Heroku](https://flappy-phoenix.herokuapp.com).
 
 # Running it locally
