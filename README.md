@@ -1,6 +1,6 @@
 # Flappy Phoenix
 
-Flappy Pheonix is a Flappy Bird clone written in Elixir using
+Flappy Phoenix is a Flappy Bird clone written in Elixir using
 [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view) to
 render the game UI from the server.
 
