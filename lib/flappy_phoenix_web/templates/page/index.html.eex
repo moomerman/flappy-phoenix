@@ -1,0 +1,18 @@
+<div id="game">
+
+  <div class="max-w-md mx-auto text-center text-grey-lighter antialiased flex flex-col">
+    <div class="flex items-center justify-center mt-24 mb-6">
+      <%= svg :phoenix, class: "h-12 w-12 mr-2 fill-current" %>
+      <h1 class="text-3xl">Flappy Phoenix</h1>
+    </div>
+    <p>A demonstration of <a href="https://github.com/phoenixframework/phoenix_live_view" class="text-grey-lighter">Phoenix LiveView</a></p>
+    <div class="mt-24">
+      <a href="/game" class="p-3 shadow rounded bg-green text-white no-underline hover:bg-white hover:text-green">Play now</a>
+    </div>
+  </div>
+
+  <div class="absolute pin-b pin-r pin-l h-12 p-4 mb-12 text-center text-blue-dark flex flex-col">
+    <div class="mb-1">Made by <a href="https://richardtaylor.dev" class="text-blue-dark mb-2">Richard Taylor</a></div>
+    <div>Code available on <a href="https://github.com/moomerman/flappy-phoenix" class="text-blue-dark">GitHub</a></div>
+  </div>
+</div>

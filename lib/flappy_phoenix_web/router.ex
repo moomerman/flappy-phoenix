@@ -17,7 +17,8 @@ defmodule FlappyPhoenixWeb.Router do
   scope "/", FlappyPhoenixWeb do
     pipe_through :browser
 
-    get "/", PageController, :game
+    get "/", PageController, :index
+    get "/game", PageController, :game
   end
 
   # Other scopes may use custom stacks.
