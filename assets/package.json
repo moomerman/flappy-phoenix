@@ -18,7 +18,7 @@
     "copy-webpack-plugin": "^5.0",
     "css-loader": "^3.1",
     "glob-all": "^3.1.0",
-    "mini-css-extract-plugin": "^0.7",
+    "mini-css-extract-plugin": "^0.8",
     "optimize-css-assets-webpack-plugin": "^5.0",
     "postcss-loader": "^3.0.0",
     "purgecss-webpack-plugin": "^1.4.0",
