@@ -24,7 +24,7 @@
     "purgecss-webpack-plugin": "^1.4.0",
     "tailwindcss": "^0.7.4",
     "uglifyjs-webpack-plugin": "^2.1",
-    "webpack": "^4.37",
+    "webpack": "^4.39",
     "webpack-cli": "^3.3"
   }
 }
