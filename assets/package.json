@@ -11,7 +11,7 @@
     "phoenix_live_view": "file:../deps/phoenix_live_view"
   },
   "devDependencies": {
-    "@babel/core": "^7.5",
+    "@babel/core": "^7.6",
     "@babel/preset-env": "^7.5",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0",
