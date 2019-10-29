@@ -21,10 +21,10 @@
     "mini-css-extract-plugin": "^0.8",
     "optimize-css-assets-webpack-plugin": "^5.0",
     "postcss-loader": "^3.0.0",
-    "purgecss-webpack-plugin": "^1.6.0",
+    "purgecss-webpack-plugin": "^1.4.0",
     "tailwindcss": "^0.7.4",
     "uglifyjs-webpack-plugin": "^2.2",
-    "webpack": "^4.41",
+    "webpack": "^4.40",
     "webpack-cli": "^3.3"
   }
 }
