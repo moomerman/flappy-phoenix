@@ -32,7 +32,7 @@
         <h1 class="mb-6 mt-4">Game Over!</h1>
         <p class="text-xl">You scored <%= format_score(@game.score) %></p>
         <div class="mt-12 mb-8">
-          <a href="/game" class="p-3 shadow rounded bg-green text-white no-underline hover:bg-white hover:text-green">Play again</a>
+          <%= live_link "Play again!", to: Routes.live_path(@socket, FlappyPhoenixWeb.GameLive), class: "p-3 shadow rounded bg-green text-white no-underline hover:bg-white hover:text-green" %>
         </div>
       </div>
     </div>

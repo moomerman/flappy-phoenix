@@ -7,18 +7,7 @@ defmodule FlappyPhoenixWeb.GameLive do
   end
 
   def mount(_session, socket) do
-    socket = assign(socket, game: Game.new())
-
-    if connected?(socket) do
-      {:ok, schedule_tick(socket)}
-    else
-      {:ok, socket}
-    end
-  end
-
-  defp schedule_tick(socket) do
-    Process.send_after(self(), :tick, 50)
-    socket
+    {:ok, new_game(socket)}
   end
 
   def handle_info(:tick, socket) do
@@ -37,5 +26,23 @@ defmodule FlappyPhoenixWeb.GameLive do
   def handle_event("keydown", _key, socket) do
     game = Game.flap(socket.assigns.game)
     {:noreply, assign(socket, game: game)}
+  end
+
+  def handle_params(_params, _uri, socket) do
+    {:noreply, new_game(socket)}
+  end
+
+  defp new_game(socket) do
+    socket
+    |> assign(game: Game.new())
+    |> schedule_tick
+  end
+
+  defp schedule_tick(socket) do
+    if connected?(socket) do
+      Process.send_after(self(), :tick, 50)
+    end
+
+    socket
   end
 end
