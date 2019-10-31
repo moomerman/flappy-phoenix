@@ -24,12 +24,12 @@ defmodule FlappyPhoenixWeb.GameLive do
   end
 
   def handle_event("keydown", _key, socket) do
-    game = Game.flap(socket.assigns.game)
-    {:noreply, assign(socket, game: game)}
-  end
+    game = socket.assigns.game
 
-  def handle_params(_params, _uri, socket) do
-    {:noreply, new_game(socket)}
+    case game.state do
+      :ok -> {:noreply, assign(socket, game: Game.flap(game))}
+      _ -> {:noreply, new_game(socket)}
+    end
   end
 
   defp new_game(socket) do
