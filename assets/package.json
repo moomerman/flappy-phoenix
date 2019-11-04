@@ -13,7 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.6",
     "@babel/preset-env": "^7.6",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0",
     "copy-webpack-plugin": "^5.0",
     "css-loader": "^3.2",
