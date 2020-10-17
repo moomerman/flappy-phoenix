@@ -6,7 +6,7 @@ render the game UI from the server.
 
  ![Screenshot](screenshot.png)
 
-Try the game on [Heroku](https://flappy-phoenix.herokuapp.com).
+Try the game on [Now](https://www.richardtaylor.dev/flappy-phoenix).
 
 Some interesting files:
 
